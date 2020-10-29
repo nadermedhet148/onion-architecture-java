@@ -2,6 +2,7 @@ package demoTest.infrastructure.SpringApp.DataSource.repostories.implementation;
 
 import demoTest.Domain.Student;
 import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
+import demoTest.infrastructure.SpringApp.DataSource.mapper.StudentMapper;
 import demoTest.infrastructure.SpringApp.DataSource.models.StudentEntity;
 import demoTest.infrastructure.SpringApp.DataSource.repostories.interfaces.IStudentEntityRepository;
 import demoTest.repositoryInterfaces.IStudentRepository;
@@ -18,32 +19,30 @@ public class StudentRepository implements IStudentRepository {
 
     @Autowired
     private final IStudentEntityRepository StudentEntityRepository;
+    @Autowired
+    private final StudentMapper studentMapper;
 
     @Inject
-    public StudentRepository(IStudentEntityRepository studentEntityRepository) {
+    public StudentRepository(IStudentEntityRepository studentEntityRepository, StudentMapper studentMapper) {
         StudentEntityRepository = studentEntityRepository;
+        this.studentMapper = studentMapper;
     }
 
     @Override
     public List<Student> findAll() {
         this.StudentEntityRepository.save(new StudentEntity());
         return this.StudentEntityRepository.findAll().stream().map(item->{
-            return toDomain(item);
+            return studentMapper.toDomain(item);
         }).collect(Collectors.toList());
     }
 
-    private Student toDomain(StudentEntity item) {
-        Student student =  new Student();
-        student.setName(item.getName());
-        student.setId(item.getId());
-        return student;
-    }
+
 
     @Override
     public Student getById(int id) throws StudentNotExistsException {
         Optional<StudentEntity> student = this.StudentEntityRepository.findById(id);
         if(student.isPresent())
-            return toDomain(student.get());
+            return studentMapper.toDomain(student.get());
         throw new StudentNotExistsException();
     }
 }
