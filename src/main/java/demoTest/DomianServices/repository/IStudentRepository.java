@@ -1,10 +1,9 @@
-package demoTest.repositoryInterfaces;
+package demoTest.DomianServices.repository;
 
 import demoTest.Domain.Student;
 import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IStudentRepository {
 

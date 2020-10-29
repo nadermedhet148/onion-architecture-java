@@ -5,7 +5,7 @@ import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
 import demoTest.infrastructure.SpringApp.DataSource.mapper.StudentMapper;
 import demoTest.infrastructure.SpringApp.DataSource.models.StudentEntity;
 import demoTest.infrastructure.SpringApp.DataSource.repostories.interfaces.IStudentEntityRepository;
-import demoTest.repositoryInterfaces.IStudentRepository;
+import demoTest.DomianServices.repository.IStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

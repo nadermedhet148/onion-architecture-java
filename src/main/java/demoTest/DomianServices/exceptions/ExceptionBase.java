@@ -1,4 +1,4 @@
-package demoTest.DomianServices.exceptions.student;
+package demoTest.DomianServices.exceptions;
 
 public class ExceptionBase extends Exception {
 

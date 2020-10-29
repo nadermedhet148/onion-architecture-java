@@ -4,10 +4,9 @@ import javax.inject.Inject;
 import demoTest.Domain.Student;
 import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
 import demoTest.DomianServices.services.IStudentService;
-import demoTest.repositoryInterfaces.IStudentRepository;
+import demoTest.DomianServices.repository.IStudentRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public class StudentService implements IStudentService {
 

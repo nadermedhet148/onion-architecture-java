@@ -1,6 +1,6 @@
 package demoTest.infrastructure.SpringApp.RestServices.Handlers;
 
-import demoTest.DomianServices.exceptions.student.ExceptionBase;
+import demoTest.DomianServices.exceptions.ExceptionBase;
 import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
