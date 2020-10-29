@@ -2,6 +2,7 @@ package demoTest.applicationLogic;
 
 import javax.inject.Inject;
 import demoTest.Domain.Student;
+import demoTest.DomianServices.exceptions.student.StudentNotExistsException;
 import demoTest.DomianServices.services.IStudentService;
 import demoTest.repositoryInterfaces.IStudentRepository;
 
@@ -22,7 +23,7 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public Student getById(int id) {
+    public Student getById(int id) throws StudentNotExistsException {
         Student student =  this.StudentRepository.getById(id);
 
         return student;
