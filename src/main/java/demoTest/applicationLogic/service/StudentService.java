@@ -1,4 +1,4 @@
-package demoTest.applicationLogic;
+package demoTest.applicationLogic.service;
 
 import javax.inject.Inject;
 import demoTest.Domain.Student;
@@ -24,6 +24,10 @@ public class StudentService implements IStudentService {
     @Override
     public Student getById(int id) throws StudentNotExistsException {
         Student student =  this.StudentRepository.getById(id);
+
+        if(student == null) {
+            throw  new StudentNotExistsException();
+        }
 
         return student;
     }
