@@ -1,4 +1,4 @@
-package demoTest.infrastructure.SpringApp.DataSource.repostories.interfaces;
+package demoTest.infrastructure.SpringApp.DataSource.repostories.JPAInterfaces;
 
 import demoTest.infrastructure.SpringApp.DataSource.models.StudentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

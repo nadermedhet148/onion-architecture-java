@@ -1,21 +1,10 @@
 package demoTest.Domain;
 
-import java.util.List;
+public class Course {
 
-public class Student {
+    private int id;
 
-    private int id ;
     private String name;
-
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-
-    private List<Course> courses;
 
     public int getId() {
         return id;
@@ -32,9 +21,4 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
 }
