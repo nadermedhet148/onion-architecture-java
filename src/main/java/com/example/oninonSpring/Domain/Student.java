@@ -2,6 +2,9 @@ package com.example.oninonSpring.Domain;
 
 public class Student {
 
+    private int id ;
+    private String name;
+
     public int getId() {
         return id;
     }
@@ -18,8 +21,6 @@ public class Student {
         this.name = name;
     }
 
-    private int id ;
 
-    private String name;
 
 }

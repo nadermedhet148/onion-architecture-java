@@ -1,5 +1,6 @@
 package com.example.oninonSpring.applicationLogic;
 
+import javax.inject.Inject;
 import com.example.oninonSpring.Domain.Student;
 import com.example.oninonSpring.DomianServices.services.IStudentService;
 import com.example.oninonSpring.repositoryInterfaces.IStudentRepository;
@@ -10,6 +11,7 @@ import java.util.Optional;
 public class StudentService implements IStudentService {
 
     private IStudentRepository StudentRepository;
+    @Inject
     public StudentService(IStudentRepository StudentRepository){
         this.StudentRepository = StudentRepository;
     }
